@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+:root {
+  --bg-primary: #0f0f11;
+  --bg-secondary: #18181b;
+  --bg-tertiary: #27272a;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --accent: #6366f1;
+
+  /* Toast variants */
+  --toast-validation-bg: #14532d;
+  --toast-validation-border: #22c55e;
+  --toast-validation-color: #f0fdf4;
+
+  --toast-warning-bg: #422006;
+  --toast-warning-border: #f59e0b;
+  --toast-warning-color: #fffbeb;
+
+  --toast-error-bg: #450a0a;
+  --toast-error-border: #ef4444;
+  --toast-error-color: #fef2f2;
+
+  --toast-info-bg: #0c4a6e;
+  --toast-info-border: #0ea5e9;
+  --toast-info-color: #f0f9ff;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+/* Tiptap Editor Styles */
+.ProseMirror {
+  outline: none;
+  min-height: 100%;
+  padding-bottom: 20vh;
+}
+
+.ProseMirror p {
+  margin-bottom: 1em;
+  line-height: 1.8;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+}
+
+.ProseMirror h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.ProseMirror h2 {
+  font-size: 1.75em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.ProseMirror h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Surlignage temporaire du contenu inséré par l’IA (5 min) */
+.novelcraft-inserted-highlight {
+  background-color: rgba(251, 191, 36, 0.35);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* Placeholder */
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #52525b;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Toasts (Sonner) – variables validation, warning, error, info */
+[data-sonner-toast][data-type="success"] {
+  background: var(--toast-validation-bg) !important;
+  border-color: var(--toast-validation-border) !important;
+  color: var(--toast-validation-color) !important;
+}
+
+[data-sonner-toast][data-type="error"] {
+  background: var(--toast-error-bg) !important;
+  border-color: var(--toast-error-border) !important;
+  color: var(--toast-error-color) !important;
+}
+
+[data-sonner-toast].toast-warning {
+  background: var(--toast-warning-bg) !important;
+  border-color: var(--toast-warning-border) !important;
+  color: var(--toast-warning-color) !important;
+}
+
+[data-sonner-toast].toast-info {
+  background: var(--toast-info-bg) !important;
+  border-color: var(--toast-info-border) !important;
+  color: var(--toast-info-color) !important;
+}

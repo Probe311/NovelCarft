@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovelCraft</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- #region agent log -->
+    <script>
+      (function(){
+        var s=document.querySelector('script[type="module"]');
+        fetch('/api/debug-log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'471675',location:'index.html:load',message:'page load',data:{origin:location.origin,pathname:location.pathname,scriptSrc:s?s.getAttribute('src'):null,protocol:location.protocol},timestamp:Date.now(),hypothesisId:'H3,H5'})}).catch(function(){});
+      })();
+    </script>
+    <!-- #endregion -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
